@@ -74,7 +74,8 @@ Next, we execute a method call on our mock:
 String snoopyComic = ourMock.get("Snoopy");
 ```
 
-Now we use the `verify` method to check that our method was called with the given arguments. The following lines confirm that we invoked the `get` method on the mock and that the method returned a value that matches the expectation we set before:
+Now we use the `verify` method to check that our method was called with the given arguments. Use verify(...) to check that this method was indeed called with the correct argument. This is an important step because it confirms that the expected method is being used in the expected way. `assertEquals(...)` is used to assert that the actual result returned by the mock (snoopyCartoon) matches the expected result ("Peanuts"), which was predefined by the stubbing behavior.  
+The following lines confirm that we invoked the `get` method on the mock and that the method returned a value that matches the expectation we set before:
 ```
 verify(ourMock).get("Snoopy");
 assertEquals(snoopyComic, "Peanuts")
